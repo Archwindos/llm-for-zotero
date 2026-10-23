@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "syncedAt": "2026-10-23T08:01:06.749Z",
+  "adaptation": "CHAT_INSTRUCTIONS in src/instructions.mjs. Only explicitly licensed snapshots are distributed; see skills/README.md.",
+  "instructions": {
+    "path": "src/instructions.mjs",
+    "sha256": "0afc2f48fb17cd4e7213a885c0be0523e46c938db8b0948fad992171fe65c07c"
+  },
+  "skills": [
+    {
+      "name": "read-paper",
+      "source": "https://github.com/FeijiangHan/PaperForge",
+      "files": [],
+      "sourceCommit": "715487ccda2b0eea130a388040bc8d5d819da40b",
+      "snapshotPublished": false,
+      "excludedReason": "No explicit redistribution license was found in the installed snapshot or its pinned upstream root. Raw snapshot omitted."
+    },
+    {
+      "name": "tech-explain",
+      "source": "https://github.com/danyuchn/asd-ste100-skill",
+      "files": [
+        {
+          "path": "LICENSE",
+          "snapshot": "skills/installed/tech-explain/LICENSE",
+          "bytes": 1075,
+          "sha256": "d3c674e8592076c9021a59b55177adbcba6fd7e1710082becb922522b22ec672"
+        },
+        {
+          "path": "SKILL.md",
+          "snapshot": "skills/installed/tech-explain/SKILL.md",
+          "bytes": 4348,
+          "sha256": "08dd80cf764b75903acc659123fbab8bc4049ea73e03efae0c92d27f5856eb08"
+        },
+        {
+          "path": "agents/openai.yaml",
+          "snapshot": "skills/installed/tech-explain/agents/openai.yaml",
+          "bytes": 323,
+          "sha256": "803d788fea158fe00abf305acc095d156cf502accd5504f310828776a8ffe686"
+        }
+      ]
+    },
+    {
+      "name": "plain-chat",
+      "source": "https://github.com/op7418/Humanizer-zh",
+      "files": [
+        {
+          "path": "LICENSE",
+          "snapshot": "skills/installed/plain-chat/LICENSE",
+          "bytes": 1063,
+          "sha256": "aa00e74769e1b9d8e7fa7094dbfcca9b129a0ded6dce1cf4da050b99146d2fa7"
+        },
+        {
+          "path": "SKILL.md",
+          "snapshot": "skills/installed/plain-chat/SKILL.md",
+          "bytes": 5653,
+          "sha256": "2986970b59e8140bb703d2a2248373ab1b8c5cbf1871a4a1c89532d150c995dd"
+        },
+        {
+          "path": "agents/openai.yaml",
+          "snapshot": "skills/installed/plain-chat/agents/openai.yaml",
+          "bytes": 330,
+          "sha256": "97d6ee8d01142f4c816ac7ad927271ca6ef56240421b5a121da8d5c0fa926b60"
+        }
+      ]
+    }
+  ]
+}

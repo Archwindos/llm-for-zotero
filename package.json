@@ -1,0 +1,24 @@
+{
+  "name": "llm-for-zotero",
+  "version": "0.6.2",
+  "private": true,
+  "type": "module",
+  "description": "A multi-provider paper reading assistant for Zotero 10",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "npm test && npm run build"
+  },
+  "dependencies": {
+    "dompurify": "^3.3.0",
+    "jose": "6.2.12",
+    "katex": "^0.19.0",
+    "marked": "^17.0.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0",
+    "fflate": "^0.8.2",
+    "jsdom": "^27.0.0"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,7 @@
+interface:
+  display_name: "讲原理"
+  short_description: "仅在点名时解释技术原理或撰写技术原理报告，保留必要术语与不确定性"
+  default_prompt: "使用 $tech-explain 解释这个对象的技术原理，并明确事实、推导和不确定项。"
+
+policy:
+  allow_implicit_invocation: false

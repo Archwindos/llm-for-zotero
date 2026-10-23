@@ -1,0 +1,7 @@
+interface:
+  display_name: "说人话"
+  short_description: "仅在点名时用自然直接的中文进行日常对话，保留事实、条件、否定与不确定性"
+  default_prompt: "使用 $plain-chat 用自然、直接的中文回复，并保留事实、条件和不确定性。"
+
+policy:
+  allow_implicit_invocation: false

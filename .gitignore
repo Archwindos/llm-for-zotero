@@ -1,0 +1,8 @@
+node_modules/
+build/
+.local/
+.env*
+*.log
+/上传说明.md
+dist/
+validation/

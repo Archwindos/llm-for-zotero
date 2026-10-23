@@ -1,0 +1,123 @@
+#gptz-panel {
+  --gptz-bg: #fff; --gptz-soft: #f4f4f4; --gptz-input: #fff;
+  --gptz-line: #e5e5e5; --gptz-text: #242424; --gptz-muted: #737373; --gptz-accent: #222;
+  --gptz-control-line: #b5b5b5;
+  display: flex; flex-direction: column; flex: 0 0 auto;
+  min-width: 360px; max-width: 72vw; min-height: 0;
+  background: var(--gptz-bg); color: var(--gptz-text);
+  font: 13px/1.55 system-ui, "Microsoft YaHei", sans-serif;
+  overflow: hidden; box-sizing: border-box; position: relative;
+}
+#browser:has(> #gptz-panel:not([hidden])) > #appcontent { min-width: 0; overflow: hidden; }
+#gptz-panel [hidden], #gptz-panel[hidden], #gptz-splitter[hidden] { display: none !important; }
+#gptz-panel *, #gptz-panel *::before, #gptz-panel *::after { box-sizing: border-box; }
+#gptz-panel .gptz-chat-view { display: flex; flex-direction: column; min-height: 0; flex: 1; overflow: hidden; }
+#gptz-panel .gptz-model-settings { padding: 14px 18px 22px; min-height: 0; flex: 1; overflow: auto; }
+#gptz-panel .gptz-history { padding: 14px; min-height: 0; flex: 1; overflow: auto; }
+#gptz-panel .gptz-history > .gptz-row:first-child, #gptz-panel .gptz-note-export > .gptz-row:first-child { justify-content: space-between; margin-bottom: 14px; }
+#gptz-panel .gptz-history-item { flex-wrap: nowrap; padding: 8px 0; border-bottom: 1px solid var(--gptz-line); }
+#gptz-panel button.gptz-history-open { display: grid; gap: 4px; flex: 1; min-width: 0; text-align: left; justify-content: stretch; border: 0; white-space: normal; padding: 8px; }
+#gptz-panel .gptz-history-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#gptz-panel .gptz-history-open small { font-size: 10px; color: var(--gptz-muted); }
+#gptz-panel .gptz-note-export { display: flex; flex-direction: column; min-height: 0; flex: 1; padding: 14px; }
+#gptz-panel textarea.gptz-note-editor { flex: 1; min-height: 120px; max-height: none; resize: none; font: 12px/1.7 monospace; margin-bottom: 12px; }
+#gptz-panel .gptz-model-settings > .gptz-row:first-child { justify-content: space-between; margin-bottom: 10px; }
+#gptz-panel .gptz-model-settings .gptz-connect { margin: 4px 0; }
+#gptz-panel .gptz-model-settings .gptz-account { margin: 10px 0; }
+#gptz-panel .gptz-model-settings > .gptz-row { margin-top: 14px; }
+#gptz-splitter { min-width: 4px; background: var(--fill-quinary, #e8e8e8); border: 0; cursor: col-resize; }
+#gptz-panel button { appearance: none; display: inline-flex; align-items: center; justify-content: center; height: auto; max-height: none; min-height: 28px; margin: 0; font: inherit; line-height: 1.3; color: inherit; border: 1px solid var(--gptz-line); background: var(--gptz-input); border-radius: 7px; padding: 5px 10px; cursor: pointer; white-space: nowrap; }
+#gptz-panel button:hover { background: var(--gptz-soft); }
+#gptz-panel button:disabled { opacity: .5; cursor: default; }
+#gptz-panel :focus-visible { outline: 2px solid #688abb; outline-offset: 2px; }
+#gptz-panel .gptz-header { display: flex; align-items: center; justify-content: space-between; padding: 9px 14px 4px; flex-shrink: 0; }
+#gptz-panel .gptz-header strong { font-size: 14px; letter-spacing: -.2px; white-space: nowrap; }
+#gptz-panel .gptz-header > .gptz-row { flex-wrap: nowrap; }
+#gptz-panel .gptz-header img { display: block; flex-shrink: 0; }
+#gptz-panel .gptz-icon { font: 19px/1 system-ui; width: 28px; height: 28px; padding: 0; border: 0; background: transparent; color: var(--gptz-muted); }
+#gptz-panel .gptz-settings-toggle { padding: 4px 9px; border-color: var(--gptz-control-line); }
+#gptz-panel .gptz-settings-toggle[aria-expanded="true"] { background: var(--gptz-soft); }
+#gptz-panel .gptz-row { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; }
+#gptz-panel .gptz-modes { display: flex; gap: 3px; margin: 8px 14px 10px; padding: 3px; border-radius: 9px; background: var(--gptz-soft); flex-shrink: 0; }
+#gptz-panel .gptz-modes button { flex: 1; border-color: transparent; color: var(--gptz-muted); background: transparent; padding: 6px 8px; }
+#gptz-panel .gptz-modes [aria-pressed="true"] { background: var(--gptz-input); color: var(--gptz-text); box-shadow: 0 1px 3px #00000012; }
+#gptz-panel .gptz-settings { padding: 16px; margin: 0 14px 8px; border: 1px solid var(--gptz-line); border-radius: 10px; background: var(--gptz-input); max-height: 45vh; overflow: auto; flex-shrink: 0; }
+#gptz-panel .gptz-account-state { margin: 0 0 10px; font-size: 15px; font-weight: 600; overflow-wrap: anywhere; }
+#gptz-panel .gptz-account select { width: 100%; margin-bottom: 9px; }
+#gptz-panel .gptz-account > .gptz-row { margin-top: 10px; }
+#gptz-panel button.gptz-login { background: #202020; border-color: #202020; color: #fff; width: 100%; min-height: 40px; padding: 10px; font-weight: 600; }
+#gptz-panel button.gptz-login:hover { background: #383838; }
+#gptz-panel .gptz-label { display: grid; grid-template-columns: 65px minmax(0, 1fr); align-items: center; margin: 12px 0; gap: 8px; }
+#gptz-panel input, #gptz-panel textarea, #gptz-panel select { font: inherit; line-height: 1.4; background: var(--gptz-input); color: var(--gptz-text); border: 1px solid var(--gptz-control-line); border-radius: 6px; padding: 7px 8px; min-width: 0; max-height: none; }
+#gptz-panel .gptz-label input, #gptz-panel .gptz-label select { width: 100%; }
+#gptz-panel input:not([type="checkbox"]), #gptz-panel select { min-height: 34px; height: auto; }
+#gptz-panel select { appearance: auto; border-color: var(--gptz-control-line); cursor: pointer; }
+#gptz-panel input[type="checkbox"] { justify-self: start; accent-color: var(--gptz-accent); }
+#gptz-panel details summary { cursor: pointer; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#gptz-panel details[open] summary { margin-bottom: 8px; }
+#gptz-panel .gptz-translation-settings { margin-bottom: 14px; border-bottom: 1px solid var(--gptz-line); padding-bottom: 12px; }
+#gptz-panel .gptz-muted { color: var(--gptz-muted); font-size: 11px; margin: 8px 0 0; }
+#gptz-panel .gptz-transcript { display: flex; flex-direction: column; flex: 1; overflow: auto; overflow-anchor: none; padding: 0 18px 16px; min-height: 90px; }
+#gptz-panel .gptz-empty { color: var(--gptz-muted); text-align: left; margin: auto; padding: 24px 8px; line-height: 1.9; white-space: pre-line; }
+#gptz-panel .gptz-empty strong { color: var(--gptz-text); font-size: 19px; font-weight: 600; letter-spacing: -.4px; }
+#gptz-panel .gptz-empty p { margin: 8px 0 0; }
+#gptz-panel .gptz-compose { position: relative; border: 1px solid var(--gptz-control-line); border-radius: 20px; background: var(--gptz-input); margin: 0 12px 12px; padding: 10px; flex-shrink: 0; }
+#gptz-panel .gptz-compose:focus-within { border-color: #a5a5a5; }
+#gptz-panel .gptz-attachment { display: flex; align-items: center; gap: 2px; margin-bottom: 6px; padding: 3px; border: 1px solid var(--gptz-line); border-radius: 11px; max-width: 100%; }
+#gptz-panel button.gptz-attachment-open { display: flex; gap: 10px; padding: 5px 7px; flex: 1; min-width: 0; border: 0; background: transparent; text-align: left; justify-content: flex-start; }
+#gptz-panel .gptz-attachment-icon { font-size: 22px; color: var(--gptz-muted); flex-shrink: 0; }
+#gptz-panel .gptz-pdf-icon { font-size: 10px; font-weight: 600; padding: 6px 3px; border: 1px solid var(--gptz-line); border-radius: 4px; }
+#gptz-panel .gptz-attachment-text { display: grid; min-width: 0; }
+#gptz-panel .gptz-attachment-title { font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#gptz-panel .gptz-attachment-meta { font-size: 10px; color: var(--gptz-muted); overflow: hidden; text-overflow: ellipsis; }
+#gptz-panel button.gptz-attachment-remove { width: 24px; min-height: 24px; flex-shrink: 0; font-size: 17px; padding: 0; border: 0; border-radius: 50%; background: transparent; color: var(--gptz-muted); }
+#gptz-panel .gptz-add-menu, #gptz-panel .gptz-material-preview { position: absolute; bottom: 46px; left: 0; z-index: 10; padding: 6px; border: 1px solid var(--gptz-line); border-radius: 12px; background: var(--gptz-input); box-shadow: 0 4px 18px #00000014; }
+#gptz-panel .gptz-add-menu { min-width: 180px; display: grid; gap: 2px; }
+#gptz-panel .gptz-add-menu button { justify-content: flex-start; border: 0; padding: 9px 12px; min-height: 36px; }
+#gptz-panel .gptz-material-preview { right: 0; padding: 10px 12px; max-height: 42vh; overflow: auto; }
+#gptz-panel .gptz-material-preview > .gptz-row { justify-content: space-between; }
+#gptz-panel .gptz-material-preview .gptz-source-text { font-size: 12px; max-height: 32vh; }
+#gptz-panel textarea { display: block; width: 100%; resize: vertical; max-height: 180px; }
+#gptz-panel textarea[aria-label="你的问题"] { border: 0; background: transparent; padding: 8px 4px; outline: none; resize: none; min-height: 48px; max-height: 180px; }
+#gptz-panel .gptz-options { flex-wrap: nowrap; gap: 7px; margin-top: 4px; }
+#gptz-panel .gptz-options > select { padding: 5px; font-size: 12px; height: 32px; max-width: 88px; }
+#gptz-panel .gptz-options > .gptz-chat-model { flex: 1; width: 100px; max-width: none; }
+#gptz-panel .gptz-options > .gptz-chat-profile { flex: 0 1 auto; width: 65%; max-width: 270px; padding: 4px 8px; border-radius: 9px; height: 32px; min-height: 32px; }
+#gptz-panel button.gptz-add { width: 32px; height: 32px; padding: 0; border: 0; border-radius: 50%; font: 22px/1 system-ui; flex-shrink: 0; background: transparent; }
+#gptz-panel .gptz-options > select:hover { background-color: var(--gptz-soft); }
+#gptz-panel .gptz-toggle { display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; font-size: 12px; cursor: pointer; border: 1px solid var(--gptz-control-line); border-radius: 6px; background: var(--gptz-input); min-height: 32px; padding: 4px 7px; }
+#gptz-panel .gptz-toggle input { margin: 0; }
+#gptz-panel .gptz-toggle:has(input:checked) { background: var(--gptz-soft); }
+#gptz-panel .gptz-send { border-radius: 50%; width: 32px; height: 32px; padding: 0; flex-shrink: 0; font-size: 19px; line-height: 1; margin-left: auto; }
+#gptz-panel button.gptz-primary { background: var(--gptz-accent); border-color: var(--gptz-accent); color: var(--gptz-input); }
+#gptz-panel .gptz-link { border: 0; padding: 0; font: inherit; color: var(--gptz-muted); background: transparent; text-decoration: underline; }
+#gptz-panel .gptz-status { padding: 0 16px 7px; font-size: 11px; color: var(--gptz-muted); flex-shrink: 0; }
+#gptz-panel .gptz-status:empty { display: none; }
+#gptz-panel .gptz-status.error { color: #b03a36; }
+#gptz-panel .gptz-message { padding: 14px 0; overflow-wrap: anywhere; flex-shrink: 0; min-width: 0; }
+#gptz-panel .gptz-user { align-self: flex-end; max-width: 95%; background: var(--gptz-soft); padding: 10px 12px; border-radius: 12px; margin-top: 12px; }
+#gptz-panel .gptz-role { display: block; color: var(--gptz-muted); font-size: 10px; margin-bottom: 5px; font-weight: 400; }
+#gptz-panel .gptz-sent-material { max-width: 100%; border: 1px solid var(--gptz-control-line); border-radius: 6px; padding: 7px 9px; margin: 3px 0 9px; font-size: 12px; }
+#gptz-panel .gptz-sent-material summary { color: var(--gptz-muted); }
+#gptz-panel .gptz-source-text { white-space: pre-wrap; max-height: 220px; overflow: auto; margin-top: 6px; user-select: text; }
+#gptz-panel .gptz-answer { white-space: pre-wrap; line-height: 1.75; }
+#gptz-panel .gptz-answer:has(p) { white-space: normal; }
+#gptz-panel .gptz-answer p { margin: 7px 0; }
+#gptz-panel .gptz-answer pre { overflow: auto; background: var(--gptz-soft); padding: 10px; border-radius: 6px; white-space: pre; }
+#gptz-panel .gptz-answer code { font: 12px/1.5 monospace; }
+#gptz-panel .gptz-answer table { display: block; overflow: auto; border-collapse: collapse; }
+#gptz-panel .gptz-answer td, #gptz-panel .gptz-answer th { border: 1px solid var(--gptz-line); padding: 5px 8px; }
+#gptz-panel .gptz-answer a { color: #447bb3; }
+#gptz-panel .gptz-answer .katex { font-size: 1.08em; white-space: normal; }
+#gptz-panel .gptz-answer .katex-display { max-width: 100%; overflow-x: auto; overflow-y: hidden; padding: 4px 0; margin: 10px 0; }
+#gptz-panel .gptz-message > .gptz-row { margin-top: 8px; }
+#gptz-panel .gptz-message > .gptz-row button { background: transparent; border-color: transparent; padding: 2px 5px; color: var(--gptz-muted); font-size: 11px; }
+@media (prefers-color-scheme: dark) {
+  #gptz-panel { --gptz-bg: #202020; --gptz-soft: #2c2c2c; --gptz-input: #252525; --gptz-line: #414141; --gptz-control-line: #737980; --gptz-text: #e6e6e6; --gptz-muted: #a3a3a3; --gptz-accent: #eee; }
+  #gptz-panel .gptz-status.error { color: #ffaaa3; }
+  #gptz-panel button.gptz-login { background: #eee; border-color: #eee; color: #222; }
+}
+@media (max-height: 700px) {
+  #gptz-panel .gptz-settings { max-height: 33vh; padding: 12px; }
+  #gptz-panel .gptz-empty { padding: 8px; }
+}
